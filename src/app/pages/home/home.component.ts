@@ -9,10 +9,15 @@ export class HomeComponent implements OnInit {
   constructor() {}
   tasks: Task[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('init');
+  }
 
   addTask(task: Task) {
     console.log(task, 'task');
     this.tasks.push(task);
+  }
+  removeTask(taskRemove: Task) {
+    this.tasks = this.tasks.filter((task) => task.id !== taskRemove.id);
   }
 }
